@@ -3,7 +3,7 @@ import { ImageField } from "@prismicio/client"
 import { PrismicNextImage } from "@prismicio/next";
 import { useEffect, useRef } from "react";
 import { clsx } from "clsx";
-import {gsap} from "gsap";
+
 
 
 type AvatarProps = {
@@ -15,41 +15,6 @@ export default function Avatar({image, className}: AvatarProps) {
   const component = useRef(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".avatar",
-        {opacity: 0, scale: 1.4},
-        {scale: 1, opacity: 1, duration: 1.3, ease: "power3.inOut"}
-      );
-
-      window.onmousemove = (e) => {
-        if (!component.current) return;
-        const componentRect = (component.current as HTMLAnchorElement).getBoundingClientRect()
-        const componentCenterX = componentRect.left + componentRect.width / 2
-
-        const componentPercent = {
-          x: (e.clientX - componentCenterX) / componentRect.width / 2
-        }
-
-        const distFromCenter = 1 - Math.abs(componentPercent.x);
-
-        gsap.timeline({
-          defaults: {duration: .5, overwrite: "auto", ease: "power3.Out"}
-        })
-        .to(".avatar", {
-            rotation: gsap.utils.clamp(-2, 2, 5 * componentPercent.x),
-            duration: .5,
-          }, 0)
-        .to(".highlight",
-          {
-            opacity: distFromCenter - 0.7,
-            x: -10 + 20 & componentPercent.x,
-            duration: .5,
-          },
-          0
-        );
-      }
-    }, component);
   }, []);
 
   return (
