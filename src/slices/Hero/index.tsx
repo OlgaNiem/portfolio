@@ -21,7 +21,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
   useEffect(() => {
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const tl= gsap.timeline()
         tl.fromTo(".name-animation", {
           x: -100, 

@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Float, Environment } from "@react-three/drei";
 import { Suspense } from "react"; 
 import { gsap } from "gsap"; 
-import { roughness } from "three/webgpu";
+
 export default function Shapes() {
     return ( 
         <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-2 md:mt-0">
@@ -72,6 +72,13 @@ function Geometries() {
         new THREE.MeshStandardMaterial({color: 0x0fb9b1, roughness: 0.4, metalness: 0.5}),
         new THREE.MeshStandardMaterial({color: 0x6F1E51, roughness: 0.4, metalness: 0.5}),
         new THREE.MeshStandardMaterial({color: 0xFFC312, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0xffbe76, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0xdff9fb, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0x535c68, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0x22a6b3, roughness: 0.5, metalness: 0.1}),
+        new THREE.MeshStandardMaterial({color: 0xf8a5c2, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0x786fa6, roughness: 0.2, metalness: 0.5}),
+        new THREE.MeshStandardMaterial({color: 0xf7d794, roughness: 0.2, metalness: 0.5}),        
     ]
     
     const soundEffects = [

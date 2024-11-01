@@ -12,7 +12,7 @@ type ButtonProps = {
 
 }
 
-export default function Button ({ linkField, label, showIcon, className}: ButtonProps) {
+export default function Button ({ linkField, className}: ButtonProps) {
   return(
     <PrismicNextLink
       field={linkField}
