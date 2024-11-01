@@ -1,23 +1,15 @@
-import type { Metadata } from "next";
-import Urbanist from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import clsx from "clsx";
+import type { Metadata } from "next";
+import { Urbanist } from "next/font/google";
 import { PrismicPreview } from "@prismicio/next";
-import { createClient } from "@/prismicio";
-import { repositoryName } from "@/prismicio";
+import { createClient, repositoryName } from "@/prismicio";
 
-const urbanist = Urbanist({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = Urbanist({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+
+const urbanist = Urbanist({ subsets: ["latin"] });
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
