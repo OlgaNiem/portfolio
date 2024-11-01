@@ -21,7 +21,7 @@ export default function Avatar({image, className}: AvatarProps) {
         {opacity: 0, scale: 1.4},
         {scale: 1, opacity: 1, duration: 1.3, ease: "power3.inOut"}
       );
-      console.log(ctx);
+
       window.onmousemove = (e) => {
         if (!component.current) return;
         const componentRect = (component.current as HTMLAnchorElement).getBoundingClientRect()
